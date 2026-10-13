@@ -1,0 +1,26 @@
+<Project>
+
+	<PropertyGroup>
+		<NetFxVersion>net48</NetFxVersion>
+		<NetCoreVersion>net8.0</NetCoreVersion>
+		<NetWindowsEmbeddedVersion>$(NetCoreVersion)-windows10.0.19041.0</NetWindowsEmbeddedVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<FileVersion>4.1.0.0</FileVersion>
+
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<GenerateAssemblyVersionInformationalAttribute>false</GenerateAssemblyVersionInformationalAttribute>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyNeutralLanguageAttribute>false</GenerateAssemblyNeutralLanguageAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+		<FileVersion>$(FileVersion)</FileVersion>
+
+	</PropertyGroup>
+
+
+</Project>

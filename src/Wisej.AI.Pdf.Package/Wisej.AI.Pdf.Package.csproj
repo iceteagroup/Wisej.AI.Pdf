@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>$(NetFxVersion)</TargetFrameworks>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
+		<PackageId>Wisej-4-AI-Pdf</PackageId>
+		<Product>Wisej-AI</Product>
+		<Version>$(FileVersion)</Version>
+		<Description>Fast, dependency-free PDF content extraction for .NET: text with formatting, reading order, headings, lists, tables and images, with Markdown/HTML/JSON output for AI and RAG pipelines.</Description>
+		<PackageLicenseFile>EULA-3.2.txt</PackageLicenseFile>
+		<PackageOutputPath>..\..\artifacts</PackageOutputPath>
+		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+		<!-- the library has no dependencies. -->
+		<NoWarn>NU5128</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- build order only: the library is packed from its output folders below. -->
+		<ProjectReference Include="..\Wisej.AI.Pdf\Wisej.AI.Pdf.csproj" ReferenceOutputAssembly="false" SetTargetFramework="TargetFramework=netstandard2.0" />
+		<ProjectReference Include="..\Wisej.AI.Pdf\Wisej.AI.Pdf.csproj" ReferenceOutputAssembly="false" SetTargetFramework="TargetFramework=$(NetCoreVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- EULA -->
+		<None Include="EULA-3.2.txt" Pack="true" PackagePath="" />
+
+		<!-- Wisej.AI.Pdf -->
+		<None Include="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\netstandard2.0\Wisej.AI.Pdf.dll" Pack="true" PackagePath="lib\netstandard2.0" />
+		<None Include="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\$(NetCoreVersion)\Wisej.AI.Pdf.dll" Pack="true" PackagePath="lib\$(NetCoreVersion)" />
+
+		<!-- Wisej.AI.Pdf Documentation -->
+		<None Include="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\netstandard2.0\Wisej.AI.Pdf.xml" Pack="true" PackagePath="lib\netstandard2.0" />
+		<None Include="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\$(NetCoreVersion)\Wisej.AI.Pdf.xml" Pack="true" PackagePath="lib\$(NetCoreVersion)" />
+
+	</ItemGroup>
+
+	<Target Name="CopyWisejArtifacts" AfterTargets="Build">
+		<Copy SourceFiles="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\netstandard2.0\Wisej.AI.Pdf.dll"
+			  DestinationFolder="$(ProjectDir)..\..\artifacts\bin\netstandard2.0\"
+			  SkipUnchangedFiles="true"
+			  OverwriteReadOnlyFiles="true" />
+
+		<Copy SourceFiles="$(ProjectDir)..\Wisej.AI.Pdf\bin\$(Configuration)\$(NetCoreVersion)\Wisej.AI.Pdf.dll"
+			  DestinationFolder="$(ProjectDir)..\..\artifacts\bin\$(NetCoreVersion)\"
+			  SkipUnchangedFiles="true"
+			  OverwriteReadOnlyFiles="true" />
+	</Target>
+
+</Project>

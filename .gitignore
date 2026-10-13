@@ -1,0 +1,10 @@
+bin/
+obj/
+*.user
+.vs/
+*.suo
+TestResults/
+artifacts/
+
+# unused legacy signing key; the project signs with extension.snk.
+src/Wisej.AI.Pdf/Wisej.AI.Pdf.snk

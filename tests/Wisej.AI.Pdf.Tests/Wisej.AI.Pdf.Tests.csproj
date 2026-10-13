@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<RootNamespace>Wisej.AI.Pdf.Tests</RootNamespace>
+		<AssemblyName>Wisej.AI.Pdf.Tests</AssemblyName>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<!-- signed with the library key: the library grants InternalsVisibleTo to this strong name. -->
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>../../src/Wisej.AI.Pdf/extension.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+		<PackageReference Include="xunit" Version="2.9.3" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="4.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Wisej.AI.Pdf\Wisej.AI.Pdf.csproj" />
+	</ItemGroup>
+
+</Project>

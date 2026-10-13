@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>Wisej.AI.Pdf</RootNamespace>
+		<AssemblyName>Wisej.AI.Pdf</AssemblyName>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>extension.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources/glyphlist.txt" LogicalName="Wisej.AI.Pdf.Resources.glyphlist.txt" />
+		<EmbeddedResource Include="Resources/zapfdingbats.txt" LogicalName="Wisej.AI.Pdf.Resources.zapfdingbats.txt" />
+		<EmbeddedResource Include="Resources/CMaps/cmaps.bin" LogicalName="Wisej.AI.Pdf.Resources.CMaps.cmaps.bin" />
+		<EmbeddedResource Include="Resources/CMaps/cid2unicode.bin" LogicalName="Wisej.AI.Pdf.Resources.CMaps.cid2unicode.bin" />
+		<EmbeddedResource Include="Resources/Standard14/core14.bin" LogicalName="Wisej.AI.Pdf.Resources.Standard14.core14.bin" />
+	</ItemGroup>
+
+</Project>

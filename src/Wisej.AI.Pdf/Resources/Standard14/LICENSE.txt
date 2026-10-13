@@ -1,0 +1,19 @@
+core14.bin is generated from Adobe's Core 14 AFM files (Courier, Helvetica, Times, Symbol and
+ZapfDingbats, version 4.1, 1997), as mirrored by Apache PDFBox
+(pdfbox/src/main/resources/org/apache/pdfbox/resources/afm).
+
+Modifications: only the font-wide metrics and the character metrics (code, width, glyph name)
+are kept, converted to a compact binary format and compressed with Deflate. The AFM files
+of Symbol and ZapfDingbats have no Ascender, Descender, CapHeight or XHeight: these values
+are derived from the font and glyph bounding boxes. The copyright notices of the AFM files
+are retained below.
+
+Copyright (c) 1985, 1987, 1989, 1990, 1991, 1992, 1993, 1997 Adobe Systems Incorporated.
+All Rights Reserved.
+
+The MustRead.html file that accompanies the AFM files is included in this directory; its text follows.
+
+-------------------------------------------------------------------------------
+
+Core 14 AFM Files - ReadMe
+This file and the 14 PostScript(R) AFM files it accompanies may be used, copied, and distributed for any purpose and without charge, with or without modification, provided that all copyright notices are retained; that the AFM files are not distributed without this file; that all modifications to this file or any of the AFM files are prominently noted in the modified file(s); and that this paragraph is not modified. Adobe Systems has no responsibility or obligation to support the use of the AFM files.
